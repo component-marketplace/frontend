@@ -91,7 +91,7 @@ const NewItemForm = styled((props) => {
   const [description, setDescription] = useState();
 
   const createItem = async() => {
-    await fetch(`http://localhost:3000/v1/items?name=${name}&description=${description}`, {method: 'post'});
+    await fetch(`http://localhost:4000/v1/items?name=${name}&description=${description}`, {method: 'post'});
     refetch();
     handleClose();
   };

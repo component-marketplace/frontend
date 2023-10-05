@@ -12,7 +12,7 @@ const ItemDetail = styled((props) => {
   const [newSaleOpen, setNewSaleOpen] = useState();
 
   const deleteItemComponent = async(id) => {
-    await fetch(`http://localhost:3000/v1/item_components/${id}`, {method: 'delete'});
+    await fetch(`http://localhost:4000/v1/item_components/${id}`, {method: 'delete'});
     setComponentDetail();
     refetch();
   }
@@ -185,7 +185,7 @@ const NewComponentForm = styled((props) => {
   const [description, setDescription] = useState();
 
   const createItemComponent = async() => {
-    await fetch(`http://localhost:3000/v1/item_components?item_id=${itemId}&name=${name}&description=${description}`, {method: 'post'});
+    await fetch(`http://localhost:4000/v1/item_components?item_id=${itemId}&name=${name}&description=${description}`, {method: 'post'});
     refetch();
     handleClose();
   }
@@ -234,7 +234,7 @@ const NewSaleForm = styled((props) => {
   const [quantity, setQuantity] = useState();
 
   const createItemComponent = async() => {
-    await fetch(`http://localhost:3000/v1/sale_receipts?item_id=${itemId}&price=${price}&organization_id=1&quantity=${quantity}`, {method: 'post'});
+    await fetch(`http://localhost:4000/v1/sale_receipts?item_id=${itemId}&price=${price}&organization_id=1&quantity=${quantity}`, {method: 'post'});
     refetch();
     handleClose();
   }

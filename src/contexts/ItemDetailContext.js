@@ -12,7 +12,7 @@ export default function ItemDetailProvider(props) {
   const { itemId } = useParams();
 
   const fetchAndSet = useCallback(() => {
-    fetch(`http://localhost:3000/v1/items/${itemId}`).then((resp) => resp.json().then((data) => {
+    fetch(`http://localhost:4000/v1/items/${itemId}`).then((resp) => resp.json().then((data) => {
       setData(data)
       prevDataRef.current = data;
     }));

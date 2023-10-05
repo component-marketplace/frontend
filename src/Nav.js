@@ -15,6 +15,9 @@ const Nav = styled((props) => {
       <Link to='/actions'>
         <PendingActionsIcon style={{color: 'white'}} fontSize='large' />
       </Link>
+      <Link to='/marketplace'>
+        <CategoryIcon style={{color: 'white'}} fontSize='large' />
+      </Link>
     </div>
   )
 })`

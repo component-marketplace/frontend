@@ -1,16 +1,16 @@
 import React, { createContext, useContext, useMemo, useEffect, useState, useRef, useCallback } from 'react';
 
-export const ItemsContext = createContext();
-export const ItemsConsumer = ItemsContext.Consumer;
-export const useItemsContext = () => useContext(ItemsContext);
+export const MarketplaceContext = createContext();
+export const MarketplaceConsumer = MarketplaceContext.Consumer;
+export const useMarketplaceContext = () => useContext(MarketplaceContext);
 
-export default function ItemsProvider(props) {
+export default function MarketplaceProvider(props) {
   const { children } = props;
   const [data, setData] = useState();
   const prevDataRef = useRef();
 
   const fetchAndSet = useCallback(() => {
-    fetch(`http://localhost:4000/v1/items`).then((resp) => resp.json().then((data) => {
+    fetch(`http://localhost:4000/v1/marketplace-items`).then((resp) => resp.json().then((data) => {
       setData(data)
       prevDataRef.current = data;
     }));
@@ -30,8 +30,8 @@ export default function ItemsProvider(props) {
   }, [data])
 
   return(
-    <ItemsContext.Provider value={context}>
+    <MarketplaceContext.Provider value={context}>
       {children}
-    </ItemsContext.Provider>
+    </MarketplaceContext.Provider>
   )
 }
